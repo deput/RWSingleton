@@ -2,7 +2,7 @@
 A macro to create singleton class quickly in ObjC
 
 ##Motivation
-[CWLSynthesizeSingleton](https://github.com/incbee/CWLSynthesizeSingleton) inspires me to change it a little bit. It is better to use `dispatch_once_t`. Meanwhile, I did not perform lock on getting shared instance to avoid performance degradation, I leave these task to developer themselves according to their implemetations.
+[CWLSynthesizeSingleton](https://github.com/incbee/CWLSynthesizeSingleton) inspires me to change it a little bit. It is better to use `dispatch_once_t`. Meanwhile, to avoid performance degradation I did not perform lock on getting shared instance, I leave these tasks to developer themselves according to their implemetations.
 
 ## Usage
 Supposing a desired singleton class named `MyOjbect`.
