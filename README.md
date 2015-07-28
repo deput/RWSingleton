@@ -18,7 +18,7 @@ in `MyObject.m`:
 ```objc
 #import "MyObject.h"
 @implementation MyObject
-AIF_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(MyObject, sharedObject)
+RW_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(MyObject, sharedObject)
 @end
 ```
 
