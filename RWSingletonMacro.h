@@ -37,6 +37,9 @@ static classname *accessorMethodName##Instance = nil; \
     dispatch_once(&onceToken,^{\
         accessorMethodName##Instance = [super allocWithZone:NULL]; \
         accessorMethodName##Instance = [accessorMethodName##Instance init]; \
+        method_exchangeImplementations(\
+                class_getInstanceMethod([accessorMethodName##Instance class], @selector(init)),\
+                class_getInstanceMethod([accessorMethodName##Instance class], @selector(init_once)));\
     });\
     return accessorMethodName##Instance; \
 }\
@@ -47,6 +50,10 @@ static classname *accessorMethodName##Instance = nil; \
 } \
 \
 - (id)copyWithZone:(NSZone *)zone \
+{ \
+    return self; \
+} \
+- (id)init_once\
 { \
     return self; \
 } \
