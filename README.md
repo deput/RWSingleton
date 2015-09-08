@@ -21,4 +21,20 @@ in `MyObject.m`:
 RW_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(MyObject, sharedObject)
 @end
 ```
+Also, you can overwrite `-(id)init` method to do your custom initialization:
+```objc
+#import "MyObject.h"
+@implementation MyObject
+RW_SYNTHESIZE_SINGLETON_FOR_CLASS_WITH_ACCESSOR(MyObject, sharedObject)
+
+- (id) init
+{
+  self = [super init];
+  //do your things
+  return self
+}
+@end
+```
+
+
 
